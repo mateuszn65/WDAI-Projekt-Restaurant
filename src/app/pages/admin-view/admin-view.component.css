@@ -1,0 +1,11 @@
+.pointer{
+    cursor: pointer;
+    font-size: 1em;
+}
+.margin{
+    margin: 1em;
+}
+.red-border{
+    border: 1px solid red;
+    border-radius: 2px;
+}

@@ -1,0 +1,8 @@
+<div *ngIf="orders" class="dishes-container center">
+    <div id="d{{i}}" class="dish" *ngFor="let order of orders; index as i">
+        <h5>Order {{i + 1}}</h5>
+        <div class="" *ngFor="let dish of order.dishes">
+            {{dish.dishName}}
+        </div>
+    </div>
+</div>

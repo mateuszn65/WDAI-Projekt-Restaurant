@@ -1,0 +1,27 @@
+<div class="grid">
+  <form (ngSubmit)="register()" class="container">
+    <div class="row">
+      <div class="input-field col">
+        <input required [(ngModel)]="email" id="email" name="email" type="email" />
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col">
+        <input required [(ngModel)]="username" id="username" name="username" type="text" />
+        <label for="username">Display Username</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col">
+        <input #pw required minlength="6" autocomplete="off" [(ngModel)]="password" id="password" name="password"
+          type="password" />
+        <label for="password">Password</label>
+      </div>
+    </div>
+    <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+      <span>{{ firebaseErrorMessage }}</span>
+    </div>
+    <button class="btn-small" type="submit">Register</button>
+  </form>
+</div>

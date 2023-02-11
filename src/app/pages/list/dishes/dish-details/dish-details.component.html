@@ -1,0 +1,50 @@
+<div class="container" *ngIf="dishDetails | async as dish">
+    <div class="dish">
+        <h3 class="name">{{dish.dishName | uppercase}}</h3>
+        <div class="content">
+            <div class="desc">
+                <p class="e">Kuchnia: {{dish.kitchen | uppercase}}</p>
+                <p class="e">Rodzaj: {{dish.category}} {{dish.type}}</p>
+                <p class="e">Składniki: {{dish.ingredients.join(", ")}}</p>
+                <p class="e">Opis: {{dish.description}}</p>
+                <ng-template [ngIf]="isSelectedPLN" [ngIfElse]="dolar">
+                    <p class="e">Cena: {{ dish.price | currency: 'PLN':'symbol':'':'pl' }}</p>
+                </ng-template>  
+                <ng-template #dolar>
+                    <p class="e">Cena: {{ dish.price*dolarsRate | currency: 'USD':'symbol-narrow':'':'pl' }}</p>
+                </ng-template>
+
+                <div>
+                    <app-button [customClasses]="buttonPLNClasses()" (clickButton)="plnCurency()">
+                        PLN
+                    </app-button>
+                    <app-button [customClasses]="buttonDolarClasses()" (clickButton)="dolarCurency()">
+                        $
+                    </app-button>
+                </div>
+            </div>
+        </div>
+        <ng-template [ngIf]="available>0" [ngIfElse]="none">
+            <p>Dostępne: {{available}}
+            </p>
+        </ng-template>  
+        <ng-template #none>
+            <p>Brak możliwości zamówienia</p>
+        </ng-template>
+        <div class="buttons-container">
+            <app-button customClasses="btn-small btn-floating green" (clickButton)="add(-1)">
+                -
+            </app-button>
+            <app-button [customClasses]="buttonClasses()" (clickButton)="add(+1)">
+                +
+            </app-button>
+        </div>
+        <app-rating [dishId]="dish.id" ></app-rating>
+        <app-button customClasses="btn-small black" (clickButton)="goBack()">
+            back
+        </app-button>
+    </div>
+    <div class="img">
+        <img src="{{dish.url[0]}}" alt=""> 
+    </div>
+</div>

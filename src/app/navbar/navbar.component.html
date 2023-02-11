@@ -1,0 +1,17 @@
+<div class="navbar">
+    <a href="#" class="logo" routerLink="/">Restaurant</a>
+    <div class="nav">
+        <div *ngIf="adminView()"><a href="#" routerLink="/admin-view">Admin View</a></div>
+        <div *ngIf="dishesManager()"><a href="#" routerLink="/dish-manager">Dishes Manager</a></div>
+        <div><a href="#" routerLink="/menu">Menu</a></div>
+        <div *ngIf="!isLogedIn()"><a href="#" routerLink="/login">Login</a></div>
+        <div *ngIf="!isLogedIn()"><a href="#" routerLink="/register">Register</a></div>
+        <div *ngIf="isLogedIn()"><a class="nick" href="#" routerLink="/order-history" >{{user?.username}}</a></div>
+        <div *ngIf="isLogedIn()"><a (click)="signOut()" href="#" routerLink="/">SignOut</a></div>
+
+        <div *ngIf="isLogedIn()"><a href="#" routerLink="/card">Card
+            <p class="sum" [style.background-color]="cardService.sum > 10 ? 'aqua' : 'orange' ">{{sum()}}</p>
+        </a></div>
+        
+    </div>
+</div>

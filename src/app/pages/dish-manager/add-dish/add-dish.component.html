@@ -1,0 +1,159 @@
+<div class="grid">
+  <form (ngSubmit)="send()" class="container">
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          required
+          [(ngModel)]="model.dishName"
+          id="dishName"
+          name="dishName"
+          type="text"
+        />
+        <label for="dishName">Dish Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <select
+          required
+          class="browser-default"
+          [(ngModel)]="model.kitchen"
+          name="kitchen"
+        >
+          <option
+            *ngFor="let kitchen of kitchens"
+            [ngValue]="kitchen"
+            aria-placeholder="kithen"
+          >
+            {{ kitchen }}
+          </option>
+        </select>
+        <label *ngIf="!model.kitchen" for="kithen">Kitchen</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <select
+          required
+          class="browser-default"
+          [(ngModel)]="model.category"
+          name="category"
+        >
+          <option *ngFor="let category of categories" [ngValue]="category">
+            {{ category }}
+          </option>
+        </select>
+        <label *ngIf="!model.category" for="Category">Category</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          required
+          [(ngModel)]="model.todayMaxOut"
+          id="todayMaxOut"
+          name="todayMaxOut"
+          type="number"
+        />
+        <label for="todayMaxOut">Today Max Out</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          required
+          [(ngModel)]="model.price"
+          id="price"
+          name="price"
+          type="number"
+        />
+        <label for="price">Price</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          required
+          [(ngModel)]="model.description"
+          id="description"
+          name="description"
+          type="text"
+        />
+        <label for="description">Description</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s8">
+        <app-button
+          customClasses="btn-small blue"
+          (clickButton)="addIngredient()"
+        >
+          add ingredient
+        </app-button>
+        <app-button
+          *ngIf="ingredients.length > 0"
+          customClasses="btn-small red"
+          (clickButton)="removeAllIngredients()"
+        >
+          remove all ingredients
+        </app-button>
+      </div>
+      <div
+        class="input-field col s8"
+        *ngFor="let item of ingredients; index as i; trackBy: trackByFn"
+      >
+        <input
+          required
+          [(ngModel)]="ingredients[i]"
+          id="ingredient{{ i }}"
+          name="ingredients{{ i }}"
+          type="text"
+        />
+        <label for="ingredients{{ i }}">Ingredient {{ i + 1 }} </label>
+        <app-button
+          customClasses="btn-small orange"
+          (clickButton)="removeIngredient(i)"
+        >
+          remove ingredient
+        </app-button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s8">
+        <app-button customClasses="btn-small blue" (clickButton)="addUrl()">
+          add url
+        </app-button>
+        <app-button
+          *ngIf="urls.length > 0"
+          customClasses="btn-small red"
+          (clickButton)="removeAllUrls()"
+        >
+          remove all urls
+        </app-button>
+      </div>
+      <div
+        class="input-field col s8"
+        *ngFor="let item of urls; index as i; trackBy: trackByFn"
+      >
+        <input
+          required
+          [(ngModel)]="urls[i]"
+          id="url{{ i }}"
+          name="url{{ i }}"
+          type="text"
+        />
+        <label for="url{{ i }}">Image url {{ i + 1 }} </label>
+        <div class="img">
+          <img src="{{ urls[i] }}" alt="" />
+        </div>
+        <app-button
+          customClasses="btn-small orange"
+          (clickButton)="removeUrl(i)"
+        >
+          remove url
+        </app-button>
+      </div>
+    </div>
+    <button class="btn-small" type="submit">Send</button>
+  </form>
+</div>

@@ -1,0 +1,148 @@
+import { Dish } from "./dish";
+export const DISHES: Dish[] = [
+    {
+        id:"1",
+        dishName: "naleśniki z serem",
+        kitchen: "polska",
+        type: "vegetariański",
+        category: "śniadanie",
+        ingredients: ["ser", "mąka", "mleko", "jajka"],
+        todayMaxOut: 7,
+        price: 10,
+        description: "Klasyczne naleśniki z serem twarogowym",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638739146/nalesniki-z-serem-2_puzp9f.jpg"]
+    },
+    {
+        id:"2",
+        dishName: "pierogi z serem",
+        kitchen: "polska",
+        type: "vegetariański",
+        category: "obiad",
+        ingredients: ["ser", "mąka", "jajka"],
+        todayMaxOut: 24,
+        price: 12,
+        description: "Klasyczne pierogi z serem twarogowym",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638739543/pierogi-z-kasza-gryczana-1_fkc9lh.jpg"]
+    },
+    {
+        id:"3",
+        dishName: "Pierogi z mięsem",
+        kitchen: "polska",
+        type: "mięsny",
+        category: "obiad",
+        ingredients: ["farsz mięsny", "mąka", "mleko", "jajka"],
+        todayMaxOut: 15,
+        price: 16,
+        description: "Klasyczne pierogi z mięsem",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638739628/pierogi-z-miesem120-4_cwbhn1.jpg"]
+    },
+    {
+        id:"4",
+        dishName: "Pierogi ruskie",
+        kitchen: "polska",
+        type: "vegetariański",
+        category: "obiad",
+        ingredients: ["ziemniaki", "cebula", "mąka", "mleko", "jajka"],
+        todayMaxOut: 9,
+        price: 13,
+        description: "Klasyczne pierogi ruskie",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638739756/RUxNODE2NDkyOTA_qjqgc1.jpg"]
+    },
+    {
+        id:"5",
+        dishName: "Rosół",
+        kitchen: "polska",
+        type: "",
+        category: "zupa",
+        ingredients: ["makaron", "kurczak", "marchew", "pietruszka", "por", "cebula"],
+        todayMaxOut: 19,
+        price: 8,
+        description: "Królowa polskich zup",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638740063/2f79be4949d6e20f34b3ce28bcf70009_a0ed75e7-c444-43c6-8664-36697dc6eea9-large-landscape-150_eldkld.jpg"]
+    },
+    {
+        id:"6",
+        dishName: "Zupa pomidorowa z ryżem",
+        kitchen: "polska",
+        type: "",
+        category: "zupa",
+        ingredients: ["ryż", "cebula", "pomidory", "bulion"],
+        todayMaxOut: 11,
+        price: 12,
+        description: "Zupa pomidorowa z ryżem",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638740765/zupa-pomidorowa-z-ryzem-przepis-skladniki-i-przygotowanie-2382336_fkpflq.jpg"]
+    },
+    {
+        id:"7",
+        dishName: "Krem z dyni",
+        kitchen: "włoska",
+        type: "vegetariańska",
+        category: "zupa",
+        ingredients: ["dynia", "ziemniaki", "marchew", "cebula"],
+        todayMaxOut: 6,
+        price: 19,
+        description: "Krem z dyni piżmowej podany z olejem dyniowym i pestkami dyni",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638741027/butternut-soup-2-scaled-1-500x500_wjxr9k.jpg"]
+    },
+    {
+        id:"8",
+        dishName: "Spaghetti alla carbonara",
+        kitchen: "włoska",
+        type: "vegetariańska",
+        category: "obiad",
+        ingredients: ["jajka", "makaron", "boczek", "Parmezan"],
+        todayMaxOut: 16,
+        price: 13,
+        description: "Drugi najpopularniejszy sposób makaron obok bolognese",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638741406/Traditional-Spaghetti-alla-Carbonara_1131611747132_vgs0oh.jpg"]
+    },
+    {
+        id:"9",
+        dishName: "Naleśniki z rakami",
+        kitchen: "mieszana",
+        type: "vegetariańska",
+        category: "owoce morza",
+        ingredients: ["raki", "pomidor", "mąka", "mleko", "jajka"],
+        todayMaxOut: 3,
+        price: 55,
+        description: "Chrupiące naleśniki faszerowane rakami",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638741647/nalesniki-z-rakami-600x600_cemkil.jpg"]
+    },
+    {
+        id:"10",
+        dishName: "Krewetki w białym winie",
+        kitchen: "mieszana",
+        type: "vegetariańska",
+        category: "owoece morza",
+        ingredients: ["krewetki", "pomidor", "wino", "czosnek"],
+        todayMaxOut: 6,
+        price: 70,
+        description: "Krewetki duszone w białym winie z pomidorami i czosnkiem",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638741837/IMG_3450_hc7iae.jpg"]
+    },
+    {
+        id:"11",
+        dishName: "wegańska sałatka szwabska",
+        kitchen: "mieszana",
+        type: "vegańska",
+        category: "sałatka",
+        ingredients: ["ser wegański", "cebula", "korniszony", "czosnek", "musztarda"],
+        todayMaxOut: 16,
+        price: 30,
+        description: "Sałatka pozbawiona składniów mięsnych",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638742354/DSC_0022-640x428_qrrea8.jpg"]
+    },
+    {
+        id:"12",
+        dishName: "Placki ziemniaczane",
+        kitchen: "Polska",
+        type: "vegetariańska",
+        category: "kolacja",
+        ingredients: ["ziemniaki", "cebula", "mąka", "jajka"],
+        todayMaxOut: 25,
+        price: 25,
+        description: "Chrupiące placki ziemniaczane na każdą porę",
+        url: ["https://res.cloudinary.com/dxyklix4g/image/upload/v1638742034/placki-10_uc7bfy.jpg"]
+    },
+    
+]

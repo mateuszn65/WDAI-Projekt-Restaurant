@@ -1,0 +1,60 @@
+
+.background {
+    min-height: 100%;
+    min-width: 1024px;
+
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: -1;
+  }
+  .logo{
+    width: 400px;
+    position: fixed;
+    top: 40px;
+    left: 35%;
+}
+.contact{
+    width: 400px;
+    font-size: 2em;
+    color: white;
+    position: fixed;
+    top: 300px;
+    left: 37%;
+}
+
+iframe{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 30%;
+    border-top-right-radius: 500px;
+}
+
+
+
+
+  @media screen and (max-width: 800px) {
+    .background {
+      left: 50%;
+      margin-left: -512px;
+    }
+    .logo{
+        left: 10%;
+    }
+    .contact{
+        left: 14%;
+    }
+
+    @media screen and (max-height: 620px){
+        iframe{
+            display: none;
+        }
+    }
+  }
+
+
+

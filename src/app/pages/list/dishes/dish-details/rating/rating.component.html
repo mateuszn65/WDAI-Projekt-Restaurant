@@ -1,0 +1,4 @@
+<div class="" *ngIf="!currentRate">Brak ocen</div>
+<div class="rating" (mouseenter)="hover()" (mouseleave)="leave()">
+    <span class="{{curr(i)}}" *ngFor="let i of stars" (click)="rate(i)">☆</span>
+</div>

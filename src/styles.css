@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+:root{
+    background-color: aliceblue;
+    
+}
+.hide{
+    display: none;
+}
+body{
+
+    margin-top: 55px;
+}
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+button{
+    margin: 1px;
+}

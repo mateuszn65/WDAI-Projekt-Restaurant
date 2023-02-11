@@ -1,0 +1,48 @@
+<div class="grid margin">
+    <form (ngSubmit)="findUser()" class="container">
+        <div class="row">
+            Find User by email
+        </div>
+      <div class="row">
+        <div class="input-field col">
+          <input required [(ngModel)]="email" id="email" name="email" type="email" />
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <button class="btn-small" type="submit">Find</button>
+      <div *ngIf="notFountMessage != ''" class="error-style">
+    <span>{{ notFountMessage }}</span>
+</div>
+    </form>
+    
+</div>
+
+<div class="grid margin">
+    <form *ngIf="user" (ngSubmit)="update()" class="container">
+      <div class="row">
+        <div class="input-field col s3">
+            <input type="checkbox" [(ngModel)]="user.roles.client" id="client" name="client">
+            <label class="pointer" for="client">client: {{user.roles.client}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s3">
+            <input type="checkbox" [(ngModel)]="user.roles.manager" id="manager" name="manager">
+            <label class="pointer" for="manager">manager: {{user.roles.manager}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col  s3">
+            <input type="checkbox" [(ngModel)]="user.roles.admin" id="admin" name="admin">
+            <label class="pointer" for="admin">admin: {{user.roles.admin}}</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col  s3 red-border">
+            <input type="checkbox" [(ngModel)]="user.banned" id="ban" name="ban">
+            <label class="pointer" for="ban">banned: {{user.banned}}</label>
+        </div>
+    </div>
+    <button class="btn-small margin" type="submit">Update</button>
+    </form>
+</div>

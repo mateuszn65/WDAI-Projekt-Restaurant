@@ -1,0 +1,29 @@
+<div class="center">
+    <app-button customClasses="btn-small" (clickButton)="addDish()">
+    Add Dish
+</app-button>
+</div>
+<div *ngIf="dishes" class="dishes-container">
+    <div id="d{{i}}" class="dish" *ngFor="let dish of dishes; index as i">
+        <h3 class="name">{{dish.dishName | uppercase}}</h3>
+        <div class="content">
+            <div class="desc">
+                <p class="e">Cena: {{ dish.price | currency: 'PLN':'symbol':'':'pl' }}</p>
+            <p>Dostępne: {{available[i]}}
+            </p>
+            </div>
+            <div *ngIf="dish.url.length > 0" class="img">
+                <img src="{{dish.url[0]}}" alt=""> 
+            </div>
+            
+        </div>
+        <div class="remove">
+            <app-button customClasses="btn-small blue" (clickButton)="editDish(i)">
+                edit
+            </app-button>
+            <app-button customClasses="btn-small red" (clickButton)="removeDish(i)">
+                remove
+            </app-button>
+        </div>
+    </div>
+</div>

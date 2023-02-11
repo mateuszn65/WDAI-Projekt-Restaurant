@@ -1,0 +1,55 @@
+
+
+
+
+<div *ngIf="dishes" class="dishes-container">
+    <div id="d{{i}}" class="dish" *ngFor="let dish of dishes; index as i">
+        <h3 class="name">{{dish.dishName | uppercase}}</h3>
+        <div class="content">
+            <div class="desc">
+                <p class="e">Cena: {{ dish.price | currency: 'PLN':'symbol':'':'pl' }}</p>
+            
+            <p>Dostępne: {{available[i]}}
+            </p>
+            <p>W koszyku: {{nodInCard[i]}}
+            </p>
+        
+        <div class="buttons-container">
+            <app-button customClasses="btn-small btn-floating green" (clickButton)="add(-1, i)">
+                -
+            </app-button>
+            <app-button [customClasses]="buttonClasses(i)" (clickButton)="add(+1, i)">
+                +
+            </app-button>
+        </div>
+            </div>
+            <div *ngIf="dish.url.length > 0" class="img">
+                <a [routerLink]="['/menu', dish.id]">
+                    <img src="{{dish.url[0]}}" alt=""> 
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<h5 class="center" *ngIf="dishes.length>0">
+    <ng-template [ngIf]="isSelectedPLN" [ngIfElse]="dolar">
+        <p class="e">Cena: {{ total() | currency: 'PLN':'symbol':'':'pl' }}</p>
+    </ng-template>  
+    <ng-template #dolar>
+        <p class="e">Cena: {{ total() *dolarsRate | currency: 'USD':'symbol-narrow':'':'pl' }}</p>
+    </ng-template>
+    <div>
+        <app-button [customClasses]="buttonPLNClasses()" (clickButton)="plnCurency()">
+            PLN
+        </app-button>
+        <app-button [customClasses]="buttonDolarClasses()" (clickButton)="dolarCurency()">
+            $
+        </app-button>
+    </div>
+<app-button customClasses="btn" (clickButton)="order()">
+    Order
+</app-button>
+
+</h5>

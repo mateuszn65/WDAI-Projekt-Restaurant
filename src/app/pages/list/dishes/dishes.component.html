@@ -1,0 +1,32 @@
+<div *ngIf="dishes" class="dishes-container">
+    <div id="d{{i}}" class="dish" *ngFor="let dish of dishes; index as i">
+        <h3 class="name">{{dish.dishName | uppercase}}</h3>
+        <div class="content">
+            <div class="desc">
+                <p class="e">Cena: {{ dish.price | currency: 'PLN':'symbol':'':'pl' }}</p>
+                <ng-template [ngIf]="available[i]>0" [ngIfElse]="none">
+            <p>Dostępne: {{available[i]}}
+            </p>
+        </ng-template>  
+        <ng-template #none>
+            <p>Brak możliwości zamówienia</p>
+        </ng-template>
+        <div *ngIf="isLogedIn()" class="buttons-container">
+            <app-button customClasses="btn-small btn-floating green" (clickButton)="add(-1, i)">
+                -
+            </app-button>
+            <app-button [customClasses]="buttonClasses(i)" (clickButton)="add(+1, i)">
+                +
+            </app-button>
+        </div>
+            </div>
+            <div *ngIf="dish.url.length > 0" class="img">
+                <a (click)="details(i)">
+                    <img src="{{dish.url[0]}}" alt=""> 
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+

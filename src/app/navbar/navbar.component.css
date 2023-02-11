@@ -1,0 +1,42 @@
+
+.navbar{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{  
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+}
+
+a:hover{
+    background-color: rgb(77, 0, 177);
+}
+.logo{
+    font-weight: bold;
+}
+.sum{
+    position: fixed;
+    right: 0px;
+    top: 35px;
+    color: black;
+    border-radius: 50%;
+    padding: 5px;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+}
+.nick{
+    color: aqua;
+}
